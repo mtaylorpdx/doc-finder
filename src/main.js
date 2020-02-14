@@ -32,7 +32,7 @@ $(document).ready(function() {
 
     let displayInfo = function(doctors) {
       doctors.data.forEach(function(doctor) {
-        console.log(doctor);
+        $("#append").append("<p>" + doctor.profile.first_name + "</p>");
       });
     };
   });
