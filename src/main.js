@@ -7,28 +7,27 @@ import { DocService } from './doc-service.js';
 
 
 $(document).ready(function() {
+  const docService = new DocService();
+  
   $("form").submit(function(event) {
     event.preventDefault();
-
     const issue = $('#issue').val();
     const location = $('#location').val();
-    console.log(issue + " " + location);
     $('#issue').val("");
     $('#location').val("");
 
     (async () => {
-      let docService = new DocService();
-      const response = await docService.getDocInfoByIssue();
+      const response = await docService.getDocInfoByIssue(issue, location);
+      console.log(response);
       getElements(response);
     })();
+
+    const getElements = function(response) {
+      if (response === false) {
+        console.log("Error");
+      } else {
+        console.log(response.body);
+      }
+    };
   });
-
-  const getElements = function(response) {
-    if (response === false) {
-      console.log("Error");
-    } else {
-      console.log(response);
-    }
-  }
-
 });
