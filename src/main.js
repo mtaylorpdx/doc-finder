@@ -32,7 +32,7 @@ $(document).ready(function() {
 
     let displayInfo = function(doctors) {
       doctors.data.forEach(function(doctor) {
-        $("#append").append("<p>" + doctor.profile.first_name + " " + doctor.profile.last_name + "</p>");
+        $("#append").append(`<p>Name: ${doctor.profile.first_name} ${doctor.profile.last_name}<br> Phone: ${doctor.practices[0].phones[0].number} - ${doctor.practices[0].phones[0].type}</p><hr>`);
       });
     };
   });
