@@ -8,7 +8,7 @@ import { DocService } from './doc-service.js';
 
 $(document).ready(function() {
   const docService = new DocService();
-  
+
   $("form").submit(function(event) {
     event.preventDefault();
     const issue = $('#issue').val();
@@ -26,8 +26,14 @@ $(document).ready(function() {
       if (response === false) {
         console.log("Error");
       } else {
-        console.log(response.body);
+        displayInfo(response);
       }
+    };
+
+    let displayInfo = function(doctors) {
+      doctors.data.forEach(function(doctor) {
+        console.log(doctor);
+      });
     };
   });
 });
