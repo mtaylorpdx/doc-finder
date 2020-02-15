@@ -4,23 +4,38 @@
     <title>Find-a-Doc</title>
   </head>
   <div class="jumbotron jumbotron-fluid">
-    <h3>Find a Doctor</h3>
+    <h2>Find a Doctor</h2>
+    <h5>in Portland, OR</h5>
+    <hr>
+
   </div>
   <body>
     <div class="container">
       
-      <form>
-        <!-- <label for="location">Enter the location you would like to search:</label>
-        <input type="text" class="form-control" id="location" name="location"> -->
 
-        <label for="issue">Search by symptoms:</label>
-        <input type="text" class="form-control" id="issue" name="issue">
+      <div class="card text-center">
+        <div class="card-body">
+          <label for="issue">Search by symptoms:</label>
+          <input type="text" class="form-control" id="issue" name="issue">
+          <button id="searchIssue" class="btn btn-info searchSymptom">Search by Symptom</button>
+        </div>
+      </div>
+      <div class="card text-center">
+        <div class="card-body">
+          <label for="docName">Search by doctor's name:</label>
+          <input type="text" class="form-control" id="docName" name="docName">
+          <button id="searchName" class="btn btn-info searchName">Search by Doctor</button>
+        </div>
+      </div>
+      <!-- <form> -->
+        <!-- <label for="issue">Search by symptoms:</label>
+        <input type="text" class="form-control" id="issue" name="issue"> -->
 
-        <label for="docName">Search by doctor's name:</label>
-        <input type="text" class="form-control" id="docName" name="docName">
+        <!-- <label for="docName">Search by doctor's name:</label>
+        <input type="text" class="form-control" id="docName" name="docName"> -->
 
-        <button type="submit" class="btn btn-block" id="findDoc">Search</button>
-      </form>
+        <!-- <button type="submit" class="btn btn-block" id="findDoc">Search</button> -->
+      <!-- </form> -->
       <div id="append">
         
       </div>

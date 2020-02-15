@@ -7,18 +7,15 @@ import { DocService } from './doc-service.js';
 $(document).ready(function() {
   const docService = new DocService();
 
-  $("form").submit(function(event) {
+  $("#searchIssue").click(function(event) {
     event.preventDefault();
     const issue = $('#issue').val();
-    // const location = $('#location').val();
     const docName = $('#docName').val();
-    console.log(docName);
     $('#issue').val("");
-    $('#location').val("");
     $('#docName').val("");
 
     (async () => {
-      const response = await docService.getDocInfoByIssue(issue, location);
+      const response = await docService.getDocInfoByIssue(issue, docName);
       getElements(response);
     })();
 

@@ -6,6 +6,11 @@ body {
 .jumbotron {
   background-color: white;
   text-align: center;
+  max-height: 150px;
+}
+
+.card {
+  margin: 5%;
 }
 
 #onLoad {
