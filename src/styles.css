@@ -20,3 +20,7 @@ body {
   margin-left: 10%;
   margin-right: 10%;
 }
+
+.form-control {
+  margin-bottom: 1%;
+}

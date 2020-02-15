@@ -4,27 +4,27 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { DocService } from './doc-service.js';
 
-
-
 $(document).ready(function() {
   const docService = new DocService();
 
   $("form").submit(function(event) {
     event.preventDefault();
     const issue = $('#issue').val();
-    const location = $('#location').val();
+    // const location = $('#location').val();
+    const docName = $('#docName').val();
+    console.log(docName);
     $('#issue').val("");
     $('#location').val("");
+    $('#docName').val("");
 
     (async () => {
       const response = await docService.getDocInfoByIssue(issue, location);
-      console.log(response);
       getElements(response);
     })();
 
     const getElements = function(response) {
       if (response === false) {
-        console.log("Error");
+        $("#append").append("There was an error with your request. Please check your entries.");
       } else {
         displayInfo(response);
       }
