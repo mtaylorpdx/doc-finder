@@ -11,3 +11,12 @@ body {
 #onLoad {
   text-align: center;
 }
+
+#findDoc {
+  margin-bottom: 3%;
+}
+
+#append {
+  margin-left: 10%;
+  margin-right: 10%;
+}
