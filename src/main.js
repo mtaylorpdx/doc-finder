@@ -9,6 +9,21 @@ import { DocService } from './doc-service.js';
 $(document).ready(function() {
   const docService = new DocService();
 
+  $("#searchAilment").click(function(event) {
+    event.preventDefault();
+    $("#onLoad").hide();
+    $("#locationSearch").fadeIn();
+    $("#issueSearch").fadeIn();
+  });
+
+  $("#searchName").click(function(event) {
+    event.preventDefault();
+    $("#onLoad").hide();
+    $("#locationSearch").fadeIn();
+    $("#docNameSearch").fadeIn();
+  });
+
+
   $("form").submit(function(event) {
     event.preventDefault();
     const issue = $('#issue').val();
@@ -24,7 +39,7 @@ $(document).ready(function() {
 
     const getElements = function(response) {
       if (response === false) {
-        console.log("Error");
+        $("#append").html(`No results found. Please check your search terms.`);
       } else {
         displayInfo(response);
       }

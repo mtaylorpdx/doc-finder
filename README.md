@@ -8,6 +8,7 @@
 
 _This project application is an exercise in API Calls utilizing the BetterDoctor API._
 
+## Behavior Driven Development
 | Behavior | Input Example | Output Example |
 |----|----|-----|
 | Allow user to input a city and medical issue, and receive a list of doctors matching that criteria | "Portland, OR", "flu" | List of doctors in Portland, OR that treat flu | |
@@ -18,9 +19,13 @@ _This project application is an exercise in API Calls utilizing the BetterDoctor
 
 ## Setup/Installation Requirements
 
+* BetterDoctor API Key can be retrieved from ``https://developer.betterdoctor.com`` with the creation of an account.
+
 * Open Terminal
 * Type ``$ git clone https://github.com/mtaylorpdx/doc-finder``
 * Open the project folder
+* Type ``$ touch .env`` to create API Key file
+* Add your API key to .env as ``API_KEY = {your API key}``
 * Type ``$ npm install``
 * Type ``$ npm run start``
 
@@ -36,6 +41,7 @@ Email [@Matt Taylor](mailto:me@email.com)
 * Jest
 * Babel
 * ESLint
+* BetterDoctor API
 
 ### License
 

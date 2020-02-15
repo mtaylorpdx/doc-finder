@@ -1,3 +1,17 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #F5F5F5;
+}
+
+.jumbotron {
+  background-color: white;
+  text-align: center;
+}
+
+#locationSearch, #issueSearch, #docNameSearch {
+  display: none;
+}
+
+#onLoad {
+  text-align: center;
 }
