@@ -8,10 +8,6 @@ body {
   text-align: center;
 }
 
-#locationSearch, #issueSearch, #docNameSearch {
-  display: none;
-}
-
 #onLoad {
   text-align: center;
 }

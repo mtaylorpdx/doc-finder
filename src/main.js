@@ -9,21 +9,6 @@ import { DocService } from './doc-service.js';
 $(document).ready(function() {
   const docService = new DocService();
 
-  $("#searchAilment").click(function(event) {
-    event.preventDefault();
-    $("#onLoad").hide();
-    $("#locationSearch").fadeIn();
-    $("#issueSearch").fadeIn();
-  });
-
-  $("#searchName").click(function(event) {
-    event.preventDefault();
-    $("#onLoad").hide();
-    $("#locationSearch").fadeIn();
-    $("#docNameSearch").fadeIn();
-  });
-
-
   $("form").submit(function(event) {
     event.preventDefault();
     const issue = $('#issue').val();
@@ -39,7 +24,7 @@ $(document).ready(function() {
 
     const getElements = function(response) {
       if (response === false) {
-        $("#append").html(`No results found. Please check your search terms.`);
+        console.log("Error");
       } else {
         displayInfo(response);
       }
@@ -47,7 +32,8 @@ $(document).ready(function() {
 
     let displayInfo = function(doctors) {
       doctors.data.forEach(function(doctor) {
-        $("#append").append(`<p>Name: ${doctor.profile.first_name} ${doctor.profile.last_name}<br> Phone: ${doctor.practices[0].phones[0].number} - ${doctor.practices[0].phones[0].type}</p><hr>`);
+        $("#append").append(`<p><strong>Name:</strong> ${doctor.profile.first_name} ${doctor.profile.last_name}<br><p><strong>Address:</strong> ${doctor.practices[0].visit_address.street} ${doctor.practices[0].visit_address.city}, ${doctor.practices[0].visit_address.state}, ${doctor.practices[0].visit_address.zip}
+        <br><p><strong>Phone: </strong>${doctor.practices[0].phones[0].number} (${doctor.practices[0].phones[0].type})</p><hr>`);
       });
     };
   });
