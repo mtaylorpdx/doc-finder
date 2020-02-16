@@ -28,10 +28,21 @@ $(document).ready(function() {
       }
     };
 
-    let displayInfo = function(doctors) {
+    let availabilityCheck = function(availability) {
+      if (availability === true) {
+        availability = "Currently accepting patients.";
+      } else {
+        availability = "Not accepting patients at this time.";
+      }
+      return availability;
+    };
+
+    const displayInfo = function(doctors) {
       doctors.data.forEach(function(doctor) {
+        let availability = availabilityCheck(doctor.practices[0].accepts_new_patients);
+        console.log (availability);
         $("#outputResults").append(`<p><strong>Name:</strong> ${doctor.profile.first_name} ${doctor.profile.last_name}<br><p><strong>Address:</strong> ${doctor.practices[0].visit_address.street} ${doctor.practices[0].visit_address.city}, ${doctor.practices[0].visit_address.state}, ${doctor.practices[0].visit_address.zip}
-        <br><p><strong>Phone: </strong>${doctor.practices[0].phones[0].number} (${doctor.practices[0].phones[0].type})</p><hr>`);
+        <br><p><strong>Phone: </strong>${doctor.practices[0].phones[0].number} (${doctor.practices[0].phones[0].type})</p><p><strong>Website:</strong> ${doctor.practices[0].website}</p><p><strong>Availability:</strong> ${availability}</p><hr>`);
       });
     };
   });
