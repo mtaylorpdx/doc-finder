@@ -20,11 +20,23 @@ $(document).ready(function() {
       getElements(response);
     })();
 
+    // const getElements = function(response) {
+    //   console.log(response);
+    //   if (response === true) {
+    //     displayInfo(response);
+    //   } else if (response.data.length === 0) {
+    //     $("#outputResults").append("No results were found matching your search criteria.");
+    //   } else {
+    //     $("#outputResults").append("There was an error with your request. Please double-check your entries.");
+    //   }
+    // };
+
+
     const getElements = function(response) {
-      if (response) {
-        displayInfo(response);
-      } else if (response.data.length === 0) {
+      if (response.data.length === 0) {
         $("#outputResults").append("No results were found matching your search criteria.");
+      } else if (response) {
+        displayInfo(response);
       } else {
         $("#outputResults").append("There was an error with your request. Please double-check your entries.");
       }
