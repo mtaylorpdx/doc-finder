@@ -3,6 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { DocService } from './doc-service.js';
+import { availabilityCheck, websiteCheck } from './check-values.js';
 
 $(document).ready(function() {
   const docService = new DocService();
@@ -28,22 +29,6 @@ $(document).ready(function() {
       } else {
         $("#outputResults").append("There was an error with your request. Please double-check your entries.");
       }
-    };
-
-    let availabilityCheck = function(availability) {
-      if (availability === true) {
-        availability = "Currently accepting patients.";
-      } else {
-        availability = "Not accepting patients at this time.";
-      }
-      return availability;
-    };
-
-    let websiteCheck = function(website) {
-      if (website === undefined) {
-        website = "Website URL not available.";
-      }
-      return website;
     };
 
     const displayInfo = function(doctors) {
