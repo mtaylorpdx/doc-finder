@@ -32,3 +32,18 @@ body {
 .form-control {
   margin-bottom: 1%;
 }
+
+.outputCard {
+  background-color: aliceblue;
+  width: 23%;
+  padding: 1%;
+  margin: 1%;
+  text-align: left;
+}
+
+.docName {
+  font-size: larger;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 2px;
+}

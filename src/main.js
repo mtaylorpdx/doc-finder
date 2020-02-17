@@ -3,7 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { DocService } from './doc-service.js';
-import { outputList } from './check-values.js';
+import { outputList } from './output-list.js';
 
 $(document).ready(function() {
   const docService = new DocService();
