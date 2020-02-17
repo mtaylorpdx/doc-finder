@@ -1,4 +1,4 @@
-export function availabilityCheck(availability) {
+function availabilityCheck(availability) {
   if (availability === true) {
     availability = "Currently accepting patients.";
   } else {
@@ -7,11 +7,19 @@ export function availabilityCheck(availability) {
   return availability;
 }
 
-export function websiteCheck(website) {
+function websiteCheck(website) {
   if (website === undefined) {
     website = "Website URL not available.";
   } else {
     website = `<a href="${website}">${website}</a>`;
   }
   return website;
+}
+
+export function outputList(doctor) {
+  let availability = availabilityCheck(doctor.practices[0].accepts_new_patients);
+  let website = websiteCheck(doctor.practices[0].website);
+  let output = `<p><strong>Name:</strong> ${doctor.profile.first_name} ${doctor.profile.last_name}<br><p><strong>Address:</strong> ${doctor.practices[0].visit_address.street} ${doctor.practices[0].visit_address.city}, ${doctor.practices[0].visit_address.state}, ${doctor.practices[0].visit_address.zip}
+  <br><p><strong>Phone: </strong>${doctor.practices[0].phones[0].number} (${doctor.practices[0].phones[0].type})</p><p><strong>Website:</strong> ${website}</p><p><strong>Availability:</strong> ${availability}</p><hr>`;
+  return output;
 }
