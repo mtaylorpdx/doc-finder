@@ -22,12 +22,14 @@ $(document).ready(function() {
     })();
 
     const getElements = function(response) {
-      if (response.data.length === 0) {
+      if (response === undefined) {
+        $("#outputResults").append(`There was a problem with your request. Error ${response}`);
+      } else if (response.ok === false) {
+        $("#outputResults").append(`There was a problem with your request. Error ${response.status}: ${response.statusText}`);
+      } else if (response.data.length === 0) {
         $("#outputResults").append("No results were found matching your search criteria.");
-      } else if (response) {
-        displayInfo(response);
       } else {
-        $("#outputResults").append("There was an error with your request. Please double-check your entries.");
+        displayInfo(response);
       }
     };
 

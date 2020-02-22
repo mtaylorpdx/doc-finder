@@ -6,10 +6,10 @@ export class DocService {
         let jsonifiedResponse = await response.json();
         return jsonifiedResponse;
       } else {
-        return false;
+        return response;
       }
     } catch(error) {
-      return false;
+      return;
     }
   }
 }
